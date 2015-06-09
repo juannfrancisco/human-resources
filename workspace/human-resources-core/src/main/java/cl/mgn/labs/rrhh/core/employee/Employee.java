@@ -18,5 +18,31 @@ import cl.mgn.labs.rrhh.core.person.Person;
  */
 public class Employee extends Person {
 
+	private String uuid;
+	
+	
+	
+	public Employee()
+	{
+		
+	}
+	
+
+	/**
+	 * @return the uuid
+	 */
+	public String getUuid() {
+		return uuid;
+	}
+
+	/**
+	 * @param uuid the uuid to set
+	 */
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+	
+	
+	
 	
 }
