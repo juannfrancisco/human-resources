@@ -5,6 +5,26 @@
 <web-app>
   <display-name>Gestion de Recursos Humanos.</display-name>
   
+  <filter>
+  	<filter-name>SessionFilter</filter-name>
+  	<display-name>SessionFilter</display-name>
+  	<description></description>
+  	<filter-class>cl.mgn.labs.rrhh.web.filter.SessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>SessionFilter</filter-name>
+  	<url-pattern>/apix/*</url-pattern>
+  </filter-mapping>
+  
+  
+  	<servlet>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<servlet-class>cl.mgn.labs.rrhh.web.servlet.EmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<url-pattern>/servlet/employee/*</url-pattern>
+	</servlet-mapping>
   
   <servlet>
 		<servlet-name>jersey-serlvet</servlet-name>
@@ -27,5 +47,8 @@
 		<servlet-name>jersey-serlvet</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
+	
+	
+	
 	
 </web-app>

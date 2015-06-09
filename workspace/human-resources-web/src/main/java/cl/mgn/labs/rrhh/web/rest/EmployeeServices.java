@@ -6,6 +6,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
@@ -23,6 +25,38 @@ public class EmployeeServices
 		String output = "Find Employee default : " + idEmployee;
 		return Response.status(200).entity(output).build();
 	}
+	
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	@Path("/{idEmployee}")
+	public Response getEmployeeTXT(@PathParam("idEmployee") String idEmployee ) 
+	{
+		String output = "result Find Employee text : " + idEmployee;
+		return Response.status(200).entity(output).build();
+	}
+	
+	
+	@GET
+	@Produces(MediaType.TEXT_XML)
+	@Path("/{idEmployee}")
+	public Response getEmployeeXML(@PathParam("idEmployee") String idEmployee ) 
+	{
+		String output = "<tag>:'Find Employee xml : " + idEmployee + "</tag>";
+		return Response.status(200).entity(output).build();
+	}
+	
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{idEmployee}")
+	public Response getEmployeeJSON(@PathParam("idEmployee") String idEmployee ) 
+	{
+		String output = "{'result':'Find Employee json : " + idEmployee + "'}";
+		return Response.status(200).entity(output).build();
+	}
+	
+	
+	
 	
 	@GET
 	public Response getAll( ) 
