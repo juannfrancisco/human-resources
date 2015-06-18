@@ -5,6 +5,7 @@
  */
 package cl.mgn.labs.rrhh.core.employee;
 
+import cl.mgn.labs.rrhh.core.person.IdPerson;
 import cl.mgn.labs.rrhh.core.person.Person;
 
 /**
@@ -18,31 +19,48 @@ import cl.mgn.labs.rrhh.core.person.Person;
  */
 public class Employee extends Person {
 
-	private String uuid;
+	private String id;
 	
 	
-	
+	/**
+	 * 
+	 */
 	public Employee()
 	{
 		
+	}
+	
+	/**
+	 * 
+	 * @param id
+	 */
+	public Employee( String id )
+	{
+		this.setId(id);
+	}
+	
+	/**
+	 * 
+	 * @param idPerson
+	 */
+	public Employee( IdPerson idPerson )
+	{
+		this.setIdPerson(idPerson);
 	}
 	
 
 	/**
 	 * @return the uuid
 	 */
-	public String getUuid() {
-		return uuid;
+	public String getId() {
+		return id;
 	}
 
 	/**
 	 * @param uuid the uuid to set
 	 */
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setId(String id) {
+		this.id = id;
 	}
-	
-	
-	
 	
 }

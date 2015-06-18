@@ -9,7 +9,6 @@
   <url>http://maven.apache.org</url>
   <dependencies>
     
-    
     <dependency>
 		<groupId>com.sun.jersey</groupId>
 		<artifactId>jersey-server</artifactId>
@@ -49,8 +48,15 @@
 		<artifactId>human-resources-core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
-    
-    
+	
+	
+	<dependency>
+		<groupId>cl.mgn.labs.rrhh</groupId>
+		<artifactId>human-resources-persistence</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	
+	
   </dependencies>
   <build>
     <finalName>human-resources-web</finalName>

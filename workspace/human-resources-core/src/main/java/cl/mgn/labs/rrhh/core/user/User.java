@@ -16,6 +16,7 @@ package cl.mgn.labs.rrhh.core.user;
  */
 public class User {
 	
+	private String id;
 	private String userName;
 	private String password;	
 	private String email;
@@ -63,6 +64,21 @@ public class User {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		this.id = this.getUserName();
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	
