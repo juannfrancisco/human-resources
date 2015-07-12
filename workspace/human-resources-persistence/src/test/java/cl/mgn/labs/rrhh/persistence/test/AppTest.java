@@ -49,7 +49,8 @@ public class AppTest
     	employee.setGender(Gender.MALE);
     	employee.setBirthday( new Date() );
     	
-    	System.out.println( EmployeePersistenceAPI.contains((employee) ) );
+    	
+    	System.out.println( EmployeePersistenceAPI.findAll().size() );
     	
         assertTrue( true );
     }

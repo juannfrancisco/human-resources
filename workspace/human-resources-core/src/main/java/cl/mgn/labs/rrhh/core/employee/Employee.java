@@ -5,6 +5,8 @@
  */
 package cl.mgn.labs.rrhh.core.employee;
 
+import java.util.List;
+
 import cl.mgn.labs.rrhh.core.person.IdPerson;
 import cl.mgn.labs.rrhh.core.person.Person;
 
@@ -21,6 +23,7 @@ public class Employee extends Person {
 
 	private String id;
 	
+	private List<Skill> skills;
 	
 	/**
 	 * 

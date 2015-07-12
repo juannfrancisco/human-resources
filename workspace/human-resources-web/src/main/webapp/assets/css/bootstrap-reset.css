@@ -9,12 +9,12 @@ a:hover {
 
 /*panel*/
 .panel {
-    border: none;
+    /*border: none;*/
     box-shadow: none;
 }
 
 .panel-heading {
-    border-color:#eff2f7 ;
+    border-color:rgb(28, 94, 111) ;
     font-size: 13px;
     font-weight: 400;
     background: #092B35;

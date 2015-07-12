@@ -18,7 +18,7 @@ public class User {
 	
 	private String id;
 	private String userName;
-	private String password;	
+	private String password;
 	private String email;
 	
 	/**
@@ -29,6 +29,16 @@ public class User {
 		
 	}
 	
+	/**
+	 * 
+	 * @param userName
+	 * @param password
+	 */
+	public User(String userName, String password) {
+		this.setUserName(userName);
+		this.setPassword(password);
+	}
+
 	/**
 	 * @return the userName
 	 */

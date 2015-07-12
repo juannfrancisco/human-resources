@@ -5,10 +5,16 @@
   <artifactId>human-resources-web</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>human-resources-web Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <name>human resources</name>
+  <url>http://www.juanfrancisco.cl</url>
   <dependencies>
     
+    <dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.17</version>
+	</dependency>
+		
     <dependency>
 		<groupId>com.sun.jersey</groupId>
 		<artifactId>jersey-server</artifactId>
@@ -55,6 +61,20 @@
 		<artifactId>human-resources-persistence</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
+	
+	<dependency>
+		<groupId>cl.mgn.labs.rrhh</groupId>
+		<artifactId>human-resources-business</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+	
+	
+	<dependency>
+	    <groupId>com.oracle</groupId>
+	    <artifactId>ojdbc6</artifactId>
+	    <version>11.2.0</version>
+	</dependency>
+	
 	
 	
   </dependencies>

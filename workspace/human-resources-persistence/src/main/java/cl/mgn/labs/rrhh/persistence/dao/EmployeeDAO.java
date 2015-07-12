@@ -6,6 +6,7 @@ package cl.mgn.labs.rrhh.persistence.dao;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
@@ -26,6 +27,7 @@ public class EmployeeDAO
 	 */
 	public void save( Employee employee )
 	{
+		employee.setId( UUID.randomUUID().toString() );
 		this.getConnection().save( employee );
 	}
 	

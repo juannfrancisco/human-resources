@@ -11,7 +11,8 @@
           http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
  
-	<mongo:mongo host="localhost" port="27017" />
+	<mongo:mongo host="192.168.30.14" port="27017" />
+	<!--  <mongo:mongo host="localhost" port="27017" /> -->
 	<mongo:db-factory dbname="humanresources" mongo-ref="mongo"/>
  
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
@@ -19,6 +20,10 @@
 	</bean>
 	
 	<bean id="employeeDAO" class="cl.mgn.labs.rrhh.persistence.dao.EmployeeDAO">
+		<property name="connection" ref="mongoTemplate"></property>
+	</bean>
+	
+	<bean id="userDAO" class="cl.mgn.labs.rrhh.persistence.dao.UserDAO">
 		<property name="connection" ref="mongoTemplate"></property>
 	</bean>
  

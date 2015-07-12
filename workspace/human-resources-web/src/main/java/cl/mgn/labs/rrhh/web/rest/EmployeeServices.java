@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -14,6 +15,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import org.apache.log4j.Logger;
 
 import cl.mgn.labs.rrhh.core.employee.Employee;
 import cl.mgn.labs.rrhh.persistence.api.EmployeePersistenceAPI;
@@ -26,6 +29,8 @@ import cl.mgn.labs.rrhh.persistence.api.EmployeePersistenceAPI;
 @Path("/services/employee")
 public class EmployeeServices 
 {	
+	private static final Logger LOGGER = Logger.getLogger(EmployeeServices.class.getCanonicalName());
+	
 	@Context
     private HttpServletRequest request;
 	
@@ -35,6 +40,7 @@ public class EmployeeServices
 	@Path("/{idEmployee}")
 	public Response getEmployeeJSON(@PathParam("idEmployee") String idEmployee ) 
 	{
+		LOGGER.info("Obteniendo lista de empleados");
 		Employee employee = EmployeePersistenceAPI.find( new Employee(idEmployee));
 		return Response.status(200).entity(employee).build();
 	}
@@ -51,10 +57,11 @@ public class EmployeeServices
 	
 	
 	@POST
+	@Consumes( MediaType.APPLICATION_JSON )
 	public Response createEmployee( Employee employee ) 
 	{
-		String output = "create";
-		return Response.status(200).entity(output).build();
+		EmployeePersistenceAPI.save(employee);
+		return Response.status(200).entity("").build();
 	}
 	
 	

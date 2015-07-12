@@ -5,6 +5,8 @@ package cl.mgn.labs.rrhh.persistence.api;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 import cl.mgn.labs.rrhh.core.employee.Employee;
 import cl.mgn.labs.rrhh.persistence.ConnectionResource;
 import cl.mgn.labs.rrhh.persistence.dao.EmployeeDAO;
@@ -16,6 +18,8 @@ import cl.mgn.labs.rrhh.persistence.dao.EmployeeDAO;
 public final class EmployeePersistenceAPI 
 {
 	private static final EmployeeDAO dao =  (EmployeeDAO) ConnectionResource.getInstance().getBean("employeeDAO");
+	
+	private static final Logger LOGGER = Logger.getLogger(EmployeePersistenceAPI.class.getCanonicalName());
 	
 	/**
 	 * 
@@ -41,6 +45,7 @@ public final class EmployeePersistenceAPI
 	 */
 	public static List<Employee> findAll()
 	{
+		LOGGER.info("Obteniendo todos los empleados");
 		return dao.findAll();
 	}
 	

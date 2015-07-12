@@ -3,7 +3,7 @@
  * Factoría de Desarrollo de Software
  * Santiago de Chile, Region Metropolitana
  */
-package cl.mgn.labs.rrhh.core.company;
+package cl.mgn.labs.rrhh.core.employee;
 
 /**
  * ---------------------------------------------------------------------------
@@ -14,21 +14,13 @@ package cl.mgn.labs.rrhh.core.company;
  * Description : 
  * ---------------------------------------------------------------------------
  */
-public class Company 
+public class Skill 
 {
 	private String id;
 	private String name;
-	private String url;
-	private String logo;
+	private String description;
+	private SkillType type;
 	
-	
-	/**
-	 * 
-	 */
-	public Company()
-	{
-		
-	}
 	
 	
 	/**
@@ -56,33 +48,17 @@ public class Company
 		this.name = name;
 	}
 	/**
-	 * @return the url
+	 * @return the description
 	 */
-	public String getUrl() {
-		return url;
+	public String getDescription() {
+		return description;
 	}
 	/**
-	 * @param url the url to set
+	 * @param description the description to set
 	 */
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-
-	/**
-	 * @return the logo
-	 */
-	public String getLogo() {
-		return logo;
-	}
-
-
-	/**
-	 * @param logo the logo to set
-	 */
-	public void setLogo(String logo) {
-		this.logo = logo;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
-	
+
 }
