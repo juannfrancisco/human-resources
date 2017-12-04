@@ -1,3 +1,0 @@
-- Spring Mongo.
-     http://docs.spring.io/spring-data/data-mongo/docs/1.7.0.RELEASE/reference/html/
-- 
