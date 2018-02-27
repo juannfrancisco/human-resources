@@ -5,9 +5,6 @@ package cl.mgn.labs.rrhh.persistence.dao;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.List;
 
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -15,7 +12,6 @@ import org.springframework.data.mongodb.core.query.Query;
 
 import cl.mgn.labs.rrhh.core.exception.ObjectNotFoundException;
 import cl.mgn.labs.rrhh.core.user.User;
-import cl.mgn.labs.rrhh.persistence.ConnectionTest;
 
 /**
  * 
@@ -53,37 +49,6 @@ public class UserDAO
 		if( null == user )
 			throw new ObjectNotFoundException("No se ha encontrado el usuario");
 		return user;
-	}
-	
-	
-	/**
-	 * 
-	 * @param user
-	 * @throws ObjectNotFoundException 
-	 */
-	public User findx( User user ) throws ObjectNotFoundException
-	{
-		try {
-			String query = "select * FROM TEST_USUARIOS WHERE USERNAME='"+ user.getUserName() +"' "
-					+ "and PASSWORD = '"+user.getPassword()+"' ";
-			
-			
-			
-			Statement stmt = null;
-			Connection con = ConnectionTest.getInstance();
-			stmt = con.createStatement();
-	        ResultSet rs = stmt.executeQuery(query);
-	        
-	        if( !rs.next() )
-				throw new ObjectNotFoundException("No se ha encontrado el usuario");
-	        
-			return user;
-			
-			
-		} catch (Exception e) {
-			throw new ObjectNotFoundException("No se ha encontrado el usuario");
-		}
-		
 	}
 	
 	

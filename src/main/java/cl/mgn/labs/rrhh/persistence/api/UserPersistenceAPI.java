@@ -39,17 +39,6 @@ public final class UserPersistenceAPI
 		return dao.find(user);
 	}
 	
-	/**
-	 * 
-	 * @param user
-	 * @throws ObjectNotFoundException 
-	 */
-	public static User findx( User user ) throws ObjectNotFoundException
-	{
-		return dao.findx(user);
-	}
-	
-	
 	
 	/**
 	 * 
@@ -58,8 +47,7 @@ public final class UserPersistenceAPI
 	 */
 	public static User findAuth( User user ) throws ObjectNotFoundException
 	{
-		//return dao.findAuth(user);
-		return dao.findx(user); //HACK
+		return dao.findAuth(user);
 	}
 	
 	/**

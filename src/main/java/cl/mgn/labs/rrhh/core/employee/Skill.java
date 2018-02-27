@@ -22,6 +22,19 @@ public class Skill
 	private SkillType type;
 	
 	
+	public Skill() {
+		
+	}
+	
+	
+	/**
+	 * 
+	 * @param id
+	 */
+	public Skill( String id) {
+		this.id = id;
+	}
+	
 	
 	/**
 	 * @return the id
@@ -58,6 +71,18 @@ public class Skill
 	 */
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	/**
+	 * @return the type
+	 */
+	public SkillType getType() {
+		return type;
+	}
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(SkillType type) {
+		this.type = type;
 	}
 	
 

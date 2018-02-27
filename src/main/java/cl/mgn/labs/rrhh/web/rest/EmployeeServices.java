@@ -26,7 +26,7 @@ import cl.mgn.labs.rrhh.persistence.api.EmployeePersistenceAPI;
  * @author Juan Francisco Maldonado León
  *
  */
-@Path("/services/employee")
+@Path("/employee")
 public class EmployeeServices 
 {	
 	private static final Logger LOGGER = Logger.getLogger(EmployeeServices.class.getCanonicalName());
@@ -41,6 +41,16 @@ public class EmployeeServices
 	public Response getEmployeeJSON(@PathParam("idEmployee") String idEmployee ) 
 	{
 		LOGGER.info("Obteniendo lista de empleados");
+		Employee employee = EmployeePersistenceAPI.find( new Employee(idEmployee));
+		return Response.status(200).entity(employee).build();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/{idEmployee}/skills")
+	public Response getSkillsEmployeeJSON(@PathParam("idEmployee") String idEmployee ) 
+	{
+		LOGGER.info("Obteniendo los skills de un empleado");
 		Employee employee = EmployeePersistenceAPI.find( new Employee(idEmployee));
 		return Response.status(200).entity(employee).build();
 	}
@@ -66,7 +76,8 @@ public class EmployeeServices
 	
 	
 	@PUT
-	public Response modifyEmployee( ) 
+	@Consumes( MediaType.APPLICATION_JSON )
+	public Response modifyEmployee( Employee employee ) 
 	{
 		String output = "modify ";
 		return Response.status(200).entity(output).build();

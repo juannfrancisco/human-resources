@@ -65,5 +65,19 @@ public class Employee extends Person {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	/**
+	 * @return the skills
+	 */
+	public List<Skill> getSkills() {
+		return skills;
+	}
+
+	/**
+	 * @param skills the skills to set
+	 */
+	public void setSkills(List<Skill> skills) {
+		this.skills = skills;
+	}
 	
 }

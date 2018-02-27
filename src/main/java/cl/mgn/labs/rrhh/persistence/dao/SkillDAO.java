@@ -10,7 +10,7 @@ import java.util.UUID;
 
 import org.springframework.data.mongodb.core.query.Query;
 
-import cl.mgn.labs.rrhh.core.employee.Employee;
+import cl.mgn.labs.rrhh.core.employee.Skill;
 import cl.mgn.labs.rrhh.core.exception.ObjectNotFoundException;
 
 /**
@@ -22,40 +22,40 @@ import cl.mgn.labs.rrhh.core.exception.ObjectNotFoundException;
  * Description : 
  * ---------------------------------------------------------------------------
  */
-public class EmployeeDAO extends DAO<Employee>
+public class SkillDAO extends DAO<Skill>
 {
 	
 	
 	/**
 	 * 
 	 */
-	public void save( Employee employee )
+	public void save( Skill skill )
 	{
-		employee.setId( UUID.randomUUID().toString() );
-		this.getConnection().save( employee );
+		skill.setId( UUID.randomUUID().toString() );
+		this.getConnection().save( skill );
 	}
 	
 	/**
 	 * 
 	 */
-	public Employee find( Employee object )
+	public Skill find( Skill object )
 	{
-		return this.getConnection().findById( object.getId(), Employee.class );
+		return this.getConnection().findById( object.getId(), Skill.class );
 	}
 	
 	/**
 	 * 
 	 */
-	public List<Employee> findAll( )
+	public List<Skill> findAll( )
 	{
-		return this.getConnection().findAll(Employee.class);
+		return this.getConnection().findAll(Skill.class);
 	}
 	
 	
 	/**
 	 * 
 	 */
-	public void remove( Employee employee )
+	public void remove( Skill employee )
 	{
 		this.getConnection().remove( employee );
 	}
@@ -64,13 +64,13 @@ public class EmployeeDAO extends DAO<Employee>
 	/**
 	 * 
 	 */
-	public void update( Employee employee )
+	public void update( Skill employee )
 	{
 		//this.getConnection().updateFirst(Query.query(Criteria.where("")), employee, Employee.class);
 	}
 	
 	@Override
-	public void delete(Employee object) {
+	public void delete(Skill object) {
 		
 	}
 	
@@ -81,11 +81,11 @@ public class EmployeeDAO extends DAO<Employee>
 	 * @return
 	 * @throws ObjectNotFoundException 
 	 */
-	public boolean contains( Employee employee ) 
+	public boolean contains( Skill object ) 
 	{
-		Query query = new Query( where("idPerson").is( employee.getIdPerson() ) );
-		Employee employeeResult = this.getConnection().findOne( query, Employee.class );
-		return null != employeeResult;		
+		Query query = new Query( where("idSkill").is( object.getId() ) );
+		Skill result = this.getConnection().findOne( query, Skill.class );
+		return null != result;		
 	}
 
 
